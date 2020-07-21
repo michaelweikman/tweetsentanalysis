@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tweet Sentiment Analysis</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/darkly/bootstrap.min.css" integrity="sha384-Bo21yfmmZuXwcN/9vKrA5jPUMhr7znVBBeLxT9MA4r2BchhusfJ6+n8TLGUcRAtL" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row m-2">
+        <div class="col-md-12 font-weight-bold text-center">
+            <h1 style="font-size: 60px;">Tweetalyzer</h1>
+        </div>
+        <div class="col-md-12 text-center">
+          <div class="row">
+            <div class="col-md-6 mx-auto">
+              <div class="input-group mb-3">
+                <input type="text" id="search_input" name='search_term' class="form-control" placeholder="Search Term" aria-label="Search Term" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-secondary my-2 my-sm-0" id="search_term_btn" type="submit">Search</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mx-auto">
+              <div class="input-group mb-3">
+                <input type="text" id="tweet_input" name='tweet_input' class="form-control" placeholder="Tweet">
+                <div class="input-group-append pl-1">
+                  <button class="btn btn-secondary my-2 my-sm-0" id="tweet_predict" type="submit">Predict</button>
+                </div>
+                <div class="input-group-append pl-1">
+                  <button class="btn btn-secondary my-2 my-sm-0" id="vader_predict" type="submit">Vader Predict</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="loading_spinner" class="text-center mx-auto mt-3" style="display: none;">
+          <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+
+        <div id="twitter_table" class="col-md-12" style="display: none;">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Tweet</th>
+                <th scope="col">Custom Model</th>
+                <th scope="col">Vader Model</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <div id="tweet_string_div" class="text-center mx-auto mt-3" >
+        </div>
+    </div>
+  </div>
+</body>
+
+<script src="static/js/app.js"></script>
+</html>

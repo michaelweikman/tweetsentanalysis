@@ -4,9 +4,12 @@ import time
 from datetime import datetime
 import os
 
-auth = tweepy.OAuthHandler("y5kEUkqCvnpKlRQ85c9eZbRMc", "9MokzV6ul6WeM5RoepwfxlQGKFrz9H7rC4zoSIVhjzcQhOgXm9")
-auth.set_access_token("45267411-FhzWglS57UHEi1nnOevZ3KNMYYpj283BBGoirgaJa", "bikoa1GJehmW3LVmc7gKbCR153FpB6LtacaLmhFMDKDyj")
-api = tweepy.API(auth)
+
+#Didn't end up using. But kept for future use.
+
+# auth = 
+# auth.set_access_token()
+# api = tweepy.API(auth)
 
 cur_dir = os.path.dirname(os.path.abspath(__file__))
 out_csv_path = os.path.join(cur_dir, 'Resources/test_data.csv')
